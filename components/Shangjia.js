@@ -15,7 +15,7 @@ import {
     Platform,
 } from 'react-native';
 
-class Shangjia extends Component {
+export default class Shangjia extends Component {
     constructor() {
         super();
     }
@@ -39,6 +39,3 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 });
-
-// 导出模块
-module.exports = Shangjia;

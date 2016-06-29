@@ -15,7 +15,7 @@ import {
     Platform,
 } from 'react-native';
 
-class Setting extends Component {
+export default class Setting extends Component {
     constructor() {
         super();
     }
@@ -39,6 +39,3 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 });
-
-// 导出模块
-module.exports = Setting;
