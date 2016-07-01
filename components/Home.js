@@ -75,6 +75,13 @@ export default class Home extends Component {
                     showsVerticalScrollIndicator={true}>
                     <AdSlider />
                     <Separator />
+                    <Menu />
+                    <Separator />
+                    <Rush />
+                    <Separator />
+                    <Discount />
+                    <Separator />
+                    <Foods />
                 </ScrollView>
                 <Text>
                     Hello world.
