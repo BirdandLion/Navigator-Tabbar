@@ -46,7 +46,7 @@ export default class Discount extends Component {
                 });
             })
             .then((responseData) => {
-                if (responseData.data) {
+                if (responseData && responseData.data) {
                     resultCache.discountData = responseData.data;
                     this.setState({
                         isLoading: false,
@@ -80,7 +80,7 @@ export default class Discount extends Component {
 
             return (
                 <TouchableOpacity key={i} style={styles.touch} onPress={() => {
-                    weakSelf._onPress(webURL)
+                    weakSelf.props.childSelected(webURL)
                     }}>
                     <View style={styles.item}>
                         <View style={styles.title}>

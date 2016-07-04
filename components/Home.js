@@ -22,6 +22,8 @@ import Menu from './home/Menu';
 import Rush from './home/Rush';
 import Discount from './home/Discount';
 import Foods from './home/Foods';
+import MenuDetail from './home/foods/MenuDetail';
+import DiscountDetail from './home/discount/DiscountDetail'
 
 export default class Home extends Component {
     constructor() {
@@ -47,8 +49,8 @@ export default class Home extends Component {
         if (Platform.OS === 'ios') {
             this.props.navigator.push({
                 title: '限时抢购',
-                component: Shopping,
-                passProps: {shopData},
+                component: MenuDetail,
+                passProps: {},
             });
         } else {
             // for android
@@ -56,12 +58,12 @@ export default class Home extends Component {
     }
 
     _selectDiscount(url) {
-        console.log("_selectDiscount");
+        console.log("_selectDiscount = " + url);
         if (Platform.OS === 'ios') {
             this.props.navigator.push({
                 title: '限时抢购',
-                component: Shopping,
-                passProps: {shopData},
+                component: DiscountDetail,
+                passProps: {url},
             });
         } else {
             // for android
@@ -72,14 +74,14 @@ export default class Home extends Component {
         return(
             <View style={styles.container}>
                 <ScrollView
-                    showsVerticalScrollIndicator={true}>
+                    showsVerticalScrollIndicator={false}>
                     <AdSlider />
                     <Separator />
                     <Menu />
                     <Separator />
-                    <Rush />
+                    <Rush childSelected={() => this._selectRush()}/>
                     <Separator />
-                    <Discount />
+                    <Discount childSelected={(url) => this._selectDiscount(url)} />
                     <Separator />
                     <Foods />
                 </ScrollView>

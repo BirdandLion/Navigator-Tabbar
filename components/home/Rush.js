@@ -70,7 +70,7 @@ export default class Rush extends Component {
             return data.map((item, i) => {
                 let imgURL = weakSelf.loadImage(item.mdcLogoUrl);
                 return (
-                    <TouchableOpacity  key={i}  style={styles.boxtd} onPress={this.props.onSelect}>
+                    <TouchableOpacity  key={i}  style={styles.boxtd} onPress={this.props.childSelected}>
                         <View>
                             <Image source={{uri: imgURL}} style={styles.cardimg}/>
                             <Text style={styles.cardtext}>
